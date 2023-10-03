@@ -2,11 +2,10 @@ import { useState } from 'react';
 import { ButtonAdd, Form, Input, Label } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { selectContacts } from 'redux/selectors';
 import { createContactsThunk } from 'redux/thunks';
 
 export const ContactForm = () => {
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');

@@ -22,5 +22,5 @@ export const handleAddFulfilled = (state, { payload }) => {
 export const handleDeleteFulfilled = (state, { payload }) => {
   state.isLoading = false;
   state.error = null;
-  state.items = state.items.filter(({ id }) => id !== payload);
+  state.items = state.items.filter(({ id }) => id !== payload.id);
 };

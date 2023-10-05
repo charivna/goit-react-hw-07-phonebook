@@ -3,11 +3,12 @@ import { Contact } from './Contact';
 import { List } from './ContactList.styled';
 import { useEffect } from 'react';
 import { deleteContactsThunk, getContactsThunk } from 'redux/thunks';
+import { selectStatusFilter } from 'redux/selectors';
 
 export const ContactList = () => {
   const { items, error, isLoading } = useSelector(state => state.contacts);
   const dispatch = useDispatch();
-  const filtered = useSelector(state => state.filter);
+  const filtered = useSelector(selectStatusFilter);
 
   const normalizedFilter = filtered.toLowerCase();
 

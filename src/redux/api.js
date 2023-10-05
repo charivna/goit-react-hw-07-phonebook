@@ -7,12 +7,13 @@ export const fetchContacts = async () => {
 
 export const addContact = async data => {
   const res = await fetch(`${BASE_URL}/contacts`, {
+    method: 'POST',
     body: JSON.stringify(data),
   });
   return await res.json();
 };
 
 export const deleteContact = async id => {
-  const res = await fetch(`${BASE_URL}/${id}`);
+  const res = await fetch(`${BASE_URL}/contacts/${id}`, { method: 'DELETE' });
   return await res.json();
 };

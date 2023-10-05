@@ -16,8 +16,8 @@ export const ContactList = () => {
   );
 
   useEffect(() => {
-    dispatch(getContactsThunk(), [dispatch]);
-  });
+    dispatch(getContactsThunk());
+  }, [dispatch]);
 
   return (
     <>
